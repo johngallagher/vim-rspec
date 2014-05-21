@@ -63,8 +63,7 @@ endfunction
 function! LoadAndDisplayRSpecQuickfix()
   if filereadable(g:quickfix_filename) && getfsize(g:quickfix_filename) != 0
     silent execute ":cfile " . g:quickfix_filename
-    botright cwindow
-    cc
+    cclose
   else
     redraw!
     echohl WarningMsg | echo "Quickfix file " . g:quickfix_filename . " is missing or empty." | echohl None
