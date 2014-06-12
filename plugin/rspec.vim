@@ -61,6 +61,7 @@ function! SetLastSpecCommand(spec)
 endfunction
 
 function! RunSpecs(spec)
+  execute ":wall"
   execute substitute(g:rspec_command, "{spec}", a:spec, "g")
 endfunction
 
